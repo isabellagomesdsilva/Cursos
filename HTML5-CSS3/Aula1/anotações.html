@@ -1,0 +1,162 @@
+<!--
+    O HTML É ESTRUTURADO COM BASE NA SEMÂNTICA: 
+        id="" -> identificador único, não pode ter mais de uma tag com esse id
+        class="" -> identificador que pode se repetir em mais de uma tag
+        
+        PARA ESPECIFICAR EM UM STYLE:
+            - TAG = nome da tag, ex: h1 {}
+            - ID = #nome-do-id, ex: #cabecalho-um{}
+            - CLASS = .nome-da-class, ex: .fundo-vermelho{}
+
+        HEADINGS - serve para os buscadores identificarem os termos mais relevantes da pag:
+            h1 - cabeçalho, título único e mais importante da página
+            h2, h3, h4, h5, h6 - subtítulos que podem se repetir
+        
+    TAGS:
+        <p> parágrafo (TODAS AS TAGS ABAIXO PODEM ESTAR DENTRO DE p):
+            b - deixa um texto em negrito (desuso), é somente um estado físico; 
+            i - deixa um texto em itálico (desuso), é somente um estado físico;
+            strong - possui um significado semântico, dá força às palavras;
+            em - possui um significado semântico, dá ênfase aos textos;
+            a href=""- link, o href aceita arquivos locais e urls. Para o link abrir em outra aba, é necessário adicionar target="_blank" na tag de abertura;
+            img src="" alt="" - src aceita arquivos locais e urls, já o alt é o texto alternativo da imagem;
+            del - risca uma palavra errada de um texto, possui significado semântico;
+            ins - sublinha a palavra certa que foi inserida no lugar da errada, possui significado semântico;
+            s - para riscar uma palavra, somente uma alteração física e não semântica;
+            u - para sublinhar uma palavra, somente uma alteração física e não semântica;
+            smal - diminui o tamanho do texto;
+            sup - tag para representar o elevado, ex: 2²;
+            sub - tag para representar o número ou expressão que fica embaixo (índice), ex: H2O;
+            br - quebra de linha;
+            q - para demarcar uma citação. Dentro dessa tag é possível adicionar o cite="" para mostrar de onde foi tirado o que está sendo citado;
+            code - tag utilizada para escrever linhas de código em fonte monoespaçada.
+            span - container genérico inline
+        </p>
+        NÃO PODEM SEREM USADAS DENTRO DA TAG p:
+            blockquote - bloco de citação, que vem com uma definição de alinhamento do próprio navegador. Nessa tag também é possível adicionar o cite="" para mostrar de onde foi tirado o que está sendo citado (dentro dessa tag pode ter tags p);
+            hr - linha horizontal para dividir blocos, totalmente visual
+            pre - tag para textos pré formatados
+            div - container genérico, em formato de bloco
+        <ul>
+            <li>LISTA NÃO ORDENADA</li>
+        </ul>
+        <ol>
+            <li>LISTA NUMERADA</li>
+            é possível alterar o tipo com type="" e é possível começar de diferentes números utilizando start=""
+        </ol>
+        adress - fornece informações de contato;
+        article - representa uma composição independente ou que é destinado a ser distribuído de forma independente ou reutilizável;
+        aside - textos em caixas indepedentes com conteúdos relacionados mas não iguais ao conteúdo central;
+        footers - rodapé;
+        header - cabeçalho, pode ter mais de um em diferentes blocos;
+        main - conteúdo principal;
+        nav - representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação;
+        section - representa uma seção genérica quando não existir um elemento semântco para representar;
+
+    TABELAS:
+        <table>
+            <caption>descrição da tabela</caption>
+            <thead cabeçalho>
+                <tr>
+                    <th>
+                        colunas
+                    </th>
+                    <th>
+                        colunas
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        mescla as linhas
+                    </td>
+                    <td>
+                        linhas
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td rowspan="2">
+                        mescla colunas
+                    </td>
+                    <td>
+                        rodapé
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    FORMULÁRIOS:
+        <form action="descreve para onde será mandado o formulário" method="get/post" target="define se quer mandar para a mesma página ou para outra">
+            <fieldset>
+                agrupa campos relacionados
+                <legend>
+                    descreve formalmente a finalidade do elemento
+                </legend>
+            </fieldset>
+            <label>nome do campo de input</label>
+            <input type="o tipo de campo que será inputado">
+        </form>
+        types input:
+            text - texto
+            number - número
+            checkbox - caixa de marcação
+            radio - só permite marcar um 
+            date - data
+            datetimelocal - data e hora
+            time - hora
+            color - cor
+            email - email
+            file - arquivos, com accept é possível selecionar o tipo de arquivo que deseja, com multiple é possível adicionar mais de um arquivo
+            password - senha
+            range - medidor em barra
+            url - url
+            search - semântica para mostrar que é um campo de busca
+            select - caixa de seleção única
+            textarea - texto de múltiplas linhas
+        <button>
+            types:
+                reset = reseta 
+                submit = recarrega a página
+        </button>
+-->
+
+<!-- 
+    CSS:
+        width - largura
+        height - altura
+        * - seleciona todos os elementos 
+        margin - margem
+        padding - distância do conteúdo de dentro até a borda da div
+        font-size - tamanho da fonte
+        font-family - tipo da fonte
+        font-style - estilo do texto
+        text-aling - alinhamento do texto
+        text-transform - tranformação de textos em maiúsculas e minúsculas
+        color - cor da fonte
+        text-decoration - decorações para adicionar ou tirar dos textos
+        DIREÇÕES:
+            bottom - para baixo
+            top - para cima
+            left - esquerda
+            right - direita
+            ! SE FOR COLOCAR AS DIREÇÕES TUDO NUMA MESMA LINHA DEVE PENSAR SEMPRE NO SENTIDO HORÁRIO, ENTÃO TOPO, DIREITA, EMBAIXO E ESQUERDA. 
+        display - muda a forma como os blocos se comportam
+        justify-content - justificação dos conteúdo filhos dos elementos;
+        background - fundo;
+        backgorund-image - define uma imagem como fundo;
+        background-size - ajusta a imagem de fundo ao tamanho da tela;
+        backgroun-position - alinha a imagem de fundo;
+        border - borda (5px solid black = espessura, estilo e cor);
+        border-color - cor da borda;
+        border-style - estilo da borda;
+        border-width - espessura da borda;
+        box-sizing: border-box - as bordas e os padding são usados nos cálculos da altura e largura dos elementos, não expande para fora e sim para dentro;
+        :hover - cria uma sombra quando passa o mouse por cima;
+        border-colapse: colapse - tira as bordas entre as colunas das tabelas;
+        caption-side - define onde a descrição da tabela ficaria;
+        max-width - medida máxima
+        overflow-x - o que passar do eixo x o componente passa a ter um scroll próprio;
+-->
