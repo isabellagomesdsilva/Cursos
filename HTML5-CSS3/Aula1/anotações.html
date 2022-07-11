@@ -18,7 +18,7 @@
             i - deixa um texto em itálico (desuso), é somente um estado físico;
             strong - possui um significado semântico, dá força às palavras;
             em - possui um significado semântico, dá ênfase aos textos;
-            a href=""- link, o href aceita arquivos locais e urls. Para o link abrir em outra aba, é necessário adicionar target="_blank" na tag de abertura;
+            a href=""- link, o href aceita arquivos locais e urls. Para o link abrir em outra aba, é necessário adicionar target="_blank" na tag de abertura. é possível definir o link como um id, que ao clicar busca a div que possui o id colocado no link;
             img src="" alt="" - src aceita arquivos locais e urls, já o alt é o texto alternativo da imagem;
             del - risca uma palavra errada de um texto, possui significado semântico;
             ins - sublinha a palavra certa que foi inserida no lugar da errada, possui significado semântico;
@@ -121,19 +121,20 @@
                 reset = reseta 
                 submit = recarrega a página
         </button>
+    
+    scroll-behavior = "smooth" - para navegação como um scroll suave;
 -->
 
 <!-- 
     CSS:
         width - largura
         height - altura
-        * - seleciona todos os elementos 
         margin - margem
         padding - distância do conteúdo de dentro até a borda da div
         font-size - tamanho da fonte
         font-family - tipo da fonte
         font-style - estilo do texto
-        text-aling - alinhamento do texto
+        text-align - alinhamento do texto
         text-transform - tranformação de textos em maiúsculas e minúsculas
         color - cor da fonte
         text-decoration - decorações para adicionar ou tirar dos textos
@@ -153,10 +154,256 @@
         border-color - cor da borda;
         border-style - estilo da borda;
         border-width - espessura da borda;
+        border-radius - arredonda a borda;
         box-sizing: border-box - as bordas e os padding são usados nos cálculos da altura e largura dos elementos, não expande para fora e sim para dentro;
         :hover - cria uma sombra quando passa o mouse por cima;
         border-colapse: colapse - tira as bordas entre as colunas das tabelas;
         caption-side - define onde a descrição da tabela ficaria;
         max-width - medida máxima
         overflow-x - o que passar do eixo x o componente passa a ter um scroll próprio;
+        transition - velocidade da transição e como ela vai ocorrer;
+        scroll-behavior = "smooth" - para navegação como um scroll suave;
+        text-shadow - adiciona uma sombra ao texto; 
+    -->
+
+<!--
+    SELETORES:
+        * - seleciona todos os elementos
+        por tag, ex:
+            h1{} 
+        por descendência, ex:
+            body div section {}
+        por classe, ex:
+            .classe{}
+        por classe e tag, ex:
+            .classe h1{}
+        por classe e classe (seleção de dependente), ex:
+            .classe .classe{}
+        por classe e tag e classe, ex:
+            .classe h1 .classe{}
+        por tag e classe, ex:
+            h1 .classe{}
+        por duas classes, ex:
+            .classe.classe{}
+        por chieldren, ex:
+            .classe > .classe{}
+        por adjacent siblings (irmãos - seleciona o elemento que vem na sequência de outro), ex:
+            .classe h1+p{
+                seleção do p que vem depois do h1
+            }
+            .classe .classe + .classe{
+                seleção do segundo .classe que vem depois do primeiro
+            }
+        por general siblings (irmãos - seleciona todos os elementos que vem depois de outro), ex:
+            .classe h1~p{
+                seleção de todos os p que vem depois do h1
+            }
+            .classe .classe ~ .classe{
+                seleção de todos os elementos que vem depois do h1 e que são filhos de uma classe
+            }
+        por atributo, ex:
+            [atributo="valor"]{}
+            [atributo]{}
+        por pseudo-classe, ex:
+            .classe:hover{
+                seleção do elemento que está sendo passado pelo mouse
+            }
+        por pseudo-classe e tag, ex:
+            input:checked + h1{
+                quando o input estiver marcado, seleciona o h1 que vem depois
+            }
+        por pseudo-elements, ex:
+            .classe::after{
+                cria um elemento que não está no texto
+                content: "texto";
+            }
+        por id, ex:
+            #id{}
+-->
+
+<!--
+    PSEUDO-CLASSES:
+        :hover - seleciona o elemento que está sendo passado pelo mouse
+        :active - seleciona o elemento que está sendo pressionado
+        :focus - seleciona o elemento que está sendo focado
+        :visited - seleciona o elemento que já foi visitado
+        :link - seleciona o elemento que ainda não foi visitado
+        :first-child - seleciona o primeiro filho de um elemento
+        :last-child - seleciona o último filho de um elemento
+        :nth-child(n - indica o índice, mas é possível passar even [par] ou odd [ímpar], também é possível passar equações por ex de 5 em 5: 5n) - seleciona o filho de n-ésimo elemento
+        :nth-last-child(n) - seleciona o último filho de n-ésimo elemento
+        :nth-of-type(n) - seleciona o n-ésimo elemento de um tipo
+        :nth-last-of-type(n) - seleciona o último elemento de um tipo
+        :first-of-type - seleciona o primeiro elemento de um tipo
+        :last-of-type - seleciona o último elemento de um tipo
+        :only-child - seleciona o único filho de um elemento
+        :only-of-type - seleciona o único elemento de um tipo
+        :empty - seleciona o elemento que não tem filhos
+        :contains(texto) - seleciona o elemento que contém o texto
+        :target - seleciona o elemento que está sendo visualizado
+        :enabled - seleciona o elemento que está habilitado
+        :disabled - seleciona o elemento que está desabilitado
+        :checked - seleciona o elemento que está marcado
+        :indeterminate - seleciona o elemento que está indeterminado
+        :required - seleciona o elemento que está obrigatório
+        :root - seleciona o elemento raiz
+        :not(seletor - pode ser uma classe, um id, uma tag - é a condição) - seleciona o elemento que não corresponde ao seletor
+-->
+
+<!-- 
+    PSEUDO-ELEMENTS:
+        ::before - cria um elemento antes do elemento
+        ::after - cria um elemento depois do elemento
+        ::first-letter - cria uma letra antes do elemento
+        ::first-line - cria uma linha antes do elemento
+        ::selection - cria uma seleção do elemento
+        ::placeholder - cria um placeholder do elemento
+-->
+
+<!--
+    ESPECIFICIDADES DO CSS:
+        ORDEM DE APLICAÇÃO DO CSS 
+            ID
+            CLASSES, ATRIBUTOS E PSEUDO-CLASSES
+            ELEMENTOS E PSEUDO-ELEMENTS
+        ! important - aplica o CSS com prioridade
+    HERANÇAS:
+        para tirar a herança do CSS basta colocar initital e o nome da classe/tag/id que quer tirar a herança
+-->
+
+<!--
+    BOX MODEL:
+        display - define o tipo de box, sendo eles flex - , inline-flex, block - em bloco, ocupa o espaço todo -, inline-block, inline - em linha, tamanho continuado -, none;
+        overflow - define o que acontece quando o box não consegue caber todo o conteúdo
+        box-sizing - define como o box é calculado, sendo possível ser o border-box, content-box e padding-box, o content-box é o padrão e a box é acrescentada aos paddings e aos borders, o padding-box inclui o tamanho dos padding mas não os borders, as bordas são acrescidas, e o border-box inclui o tamanho dos borders, ou seja, o box é calculado com os borders e os paddings.
+        width - define a largura do elemento
+        max-width - define a largura máxima do elemento
+        min-width - define a largura mínima do elemento
+        height - define a altura do elemento
+        max-height - define a altura máxima do elemento
+        min-height - define a altura mínima do elemento
+        margin - define o espaço externo entre os elementos
+        padding - define o espaço interno entre os elementos
+        border - define as bordas do elemento
+        border-radius - define o raio das bordas do elemento
+        border-color - define a cor das bordas do elemento
+        border-style - define o estilo das bordas do elemento
+        border-width - define a largura das bordas do elemento
+        border-top - define a borda superior do elemento
+        border-right - define a borda direita do elemento
+        border-bottom - define a borda inferior do elemento
+        border-left - define a borda esquerda do elemento
+        border-top-color - define a cor da borda superior do elemento
+        border-right-color - define a cor da borda direita do elemento
+        border-bottom-color - define a cor da borda inferior do elemento
+        border-left-color - define a cor da borda esquerda do elemento
+        border-top-style - define o estilo da borda superior do elemento
+        border-right-style - define o estilo da borda direita do elemento
+        border-bottom-style - define o estilo da borda inferior do elemento
+        border-left-style - define o estilo da borda esquerda do elemento
+        border-top-width - define a largura da borda superior do elemento
+        border-right-width - define a largura da borda direita do elemento
+        border-bottom-width - define a largura da borda inferior do elemento
+        border-left-width - define a largura da borda esquerda do elemento
+        outline - define o espaço entre os elementos
+        outline-color - define o espaço entre os elementos
+        outline-style - define o espaço entre os elementos
+        float - define o tipo de float do elemento, ou seja, se ele é flutuante ou não e a posição dessa flutuação
+        clear - define o tipo de clear do elemento, ou seja, se ele é limpo ou não e a posição dessa limpeza, a opção both limpa os dois lados, left limpa apenas o lado esquerdo e right limpa apenas o lado direito
+        box-shadow - define a sombra da box
+-->
+
+<!--
+    UNIDADES DE MEDIDA USADAS
+        Absolutas:
+            px - pixels
+            
+        Relativas:
+            em - elemento se baseia no tamanho do elemento pai
+            rem - elemento se baseia no tamanho do elemento root
+            vw - viewport width, tamanho da largura navegador
+            vh - viewport height, tamanho da altura do navegador
+            % - porcentagem referente ao tamanho do elemento pai
+            vmin - vmin, relativo a menor parte do viewport
+            vmax - vmax, relativo a maior parte do viewport
+-->
+
+<!--
+    POSITION
+        position - define a posição do elemento, pode ser relativa (a posição é calculada baseado no elemento pai), absoluta (nada altera a posição definida), static (padrão, não habilita posições do posicionamento), fixed (posição fixada, então mesmo scrollando a tela o elemento fica fixado no local), sticky (cria um scroll e fixa o elemento sticky até encontrar outro sticky e fixar ele na posição do outro sticky)
+        top - define a posição em relação ao topo da página
+        right - define a posição em relação a direita da página
+        bottom - define a posição em relação ao fundo da página
+        left - define a posição em relação à esquerda da página
+        z-index - define a camada do elemento
+        float - define o tipo de float do elemento, ou seja, se ele é flutuante ou não e a posição dessa flutuação
+        clear - define o tipo de clear do elemento, ou seja, se ele é limpo ou não e a posição dessa limpeza, a opção both limpa os dois lados, left limpa apenas o lado esquerdo e right limpa apenas o lado direito
+        display - define o tipo de display do elemento, ou seja, se ele é exibido ou não e a posição dessa exibição
+        visibility - define o tipo de visibilidade do elemento, ou seja, se ele é visível ou não e a posição dessa visibilidade
+        opacity - define a opacidade do elemento
+        overflow - define o tipo de overflow do elemento, ou seja, se ele é sobreposto ou não e a posição dessa sobreposição
+        clip - define o tipo de clip do elemento, ou seja, se ele é cortado ou não e a posição dessa corte
+        content - define o tipo de content do elemento, ou seja, se ele é content ou não e a posição dessa content
+        cursor - define o tipo de cursor do elemento, ou seja, se ele é cursor ou não e a posição dessa cursor
+        pointer-events - define o tipo de pointer-events do elemento, ou seja, se ele é pointer-events ou não e a posição dessa pointer-
+-->
+
+<!--
+    MEDIA QUERY
+        @media - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) and (max-width: 500px) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) and (max-width: 500px) and (orientation: landscape) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) and (max-width: 500px) and (orientation: landscape) and (color: black) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) and (max-width: 500px) and (orientation: landscape) and (color: black) and (display: flex) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) and (max-width: 500px) and (orientation: landscape) and (color: black) and (display: flex) and (flex-direction: column) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+        @media (min-width: 0px) and (max-width: 500px) and (orientation: landscape) and (color: black) and (display: flex) and (flex-direction: column) and (justify-content: center) - define uma regra de media query, ou seja, uma regra que será aplicada apenas quando a condição for verdadeira
+-->
+
+<!--
+    FLEXBOX
+        display - define o tipo de display do elemento, ou seja, se ele é exibido ou não e a posição dessa exibição
+        flex-direction - define a direção do flex do elemento, e tipo de alinhamento do eixo principal
+        flex-wrap - se não houver espaço para exibir todos os elementos, o flexbox pode ser dividido em várias linhas
+        flex-flow - junção de flex-direction e flex-wrap
+        flex-grow - define o fator de crescimento do elemento, ou seja, quanto o elemento cresce quando a página é redimensionada
+        flex-shrink - define o fator de redução do elemento, ou seja, quanto o elemento diminui quando a página é redimensionada
+        flex-basis - define o tamanho principal inicial do elemento, ou seja, o tamanho inicial do elemento antes de ser redimensionado
+        justify-content - define qual é o alinhamento do eixo principal
+        align-items - define qual é o alinhamento dos itens do eixo perpendicular ao eixo principal
+        align-content - alinha o conteúdo do flexbox
+        align-self - alinha de forma diferente dos outros elementos do flexbox
+        order - define a ordem do elemento, ou seja, a posição do elemento na página
+-->
+
+<!--
+    GRID
+        display - define o tipo de display do elemento, ou seja, se ele é exibido ou não e a posição dessa exibição
+        grid-template-columns - define a quantidade de colunas do grid, utilizando o repeat() é possível definir quantas colunas o grid adotará automaticamente quando a página for redimensionada
+        grid-template-rows - define a quantidade de linhas do grid
+        grid-template-areas - define as áreas do grid
+        grid-template - define todas as colunas e linhas do grid
+        grid-column-start - define a coluna inicial do grid
+        grid-column-end - define a coluna final do grid
+        grid-row-start - define a linha inicial do grid
+        grid-row-end - define a linha final do grid
+        grid-column - define a coluna do grid
+        grid-row - especifica o tamanho e a localização de uma linha do grid
+        grid-area - define o nome da área do grid
+        grid-column-gap - define o espaço entre as colunas do grid
+        grid-row-gap - define o espaço entre as linhas do grid
+        grid-gap - define o espaço entre as colunas e linhas do grid
+        grid-auto-columns - define o tamanho das colunas do grid
+        grid-auto-rows - especifica o tamanho de uma grid de linha
+        grid-auto-flow - define o tipo de alinhamento do grid
+        grid-auto-column - define o tamanho da coluna do grid
+        grid-auto-row - define o tamanho da linha do grid
+        grid-auto - define o tamanho das colunas e linhas do grid
+        grid - define todas as colunas e linhas do grid
+        grid-template-areas - define as áreas do grid
+        grid-template-columns - define as colunas do grid
+        grid-template-rows - define o nome das linhas e funções de dimensionamento do grid
+        grid-template - define todas as colunas e linhas do grid
+        grid-column-start - define a coluna inicial do grid
+        grid-column-end - define a coluna final
 -->
