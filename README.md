@@ -1,5 +1,3 @@
-# Welcome to GitHub Desktop!
+# Projetos realizados a partir de cursos de diversas plataformas 
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
-
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+Esse repositório contém diversos projetos em diferentes linguagens, de cursos realizados ao longo do desenvolvimento.
