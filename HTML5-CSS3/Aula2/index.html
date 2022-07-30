@@ -17,34 +17,316 @@
       rel="stylesheet"
     />
   </head>
-  <body class="main-bg">
+  <body>
+    <input id="close-menu" class="close-menu" type="checkbox" aria-label="Close menu" role="button">
+    <label class="close-menu-label" for="close-menu" title="close menu"></label>
     <aside class="menu white-bg">
-      <section class="main-content menu-content">
-        <h1>
-          <a href="#">LOGO</a>
+      <div class="main-content menu-content">
+        <h1 onclick="getElementById('close-menu').checked = false">
+          <a href="#home">LOGO</a>
         </h1>
         <nav>
-          <ul>
+          <ul onclick="getElementById('close-menu').checked = false">
             <li>
-              <a href="#">Intro</a>
+              <a href="#intro">Intro</a>
             </li>
             <li>
-              <a href="#">Top 3</a>
+              <a href="#top3">Top 3</a>
             </li>
             <li>
-              <a href="#">Gallery</a>
+              <a href="#gallery">Gallery</a>
             </li>
             <li>
-              <a href="#">Work</a>
+              <a href="#pricing">Pricing</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
-      </section>
+      </div>
     </aside>
-    <section class="section" ></section>
-    <section class="section"></section>
+
+    <div class="menu-spacing"></div>
+
+    <section id="home" class="intro main-bg section">
+      <div class="main-content intro-content">
+        <div class="intro-text-content">
+          <h2>January brings us firefox 85</h2>
+          <p>
+            To wrap up January, we are proud to bring you the release of Firefox
+            85. In this version we are bringing you support for the
+            :focus-visible pseudo-class in CSS and associated devtools, and the
+            complete removal of Flash support from Firefox.
+          </p>
+        </div>
+        <div class="intro-img">
+          <img
+            src="assets/img/javascript.svg"
+            alt="Um homem segurando a logo do CSS, uma mulher empurrando a logo do JavaScript e um homem segurando a logo do HTML."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="intro" class="white-bg section">
+      <div class="main-content top3-content">
+        <h2>news coverage and some surprises</h2>
+        <p>
+          The release of Apple Silicon-based Macs at the end of last year
+          generated a flurry of news coverage and some surprises at the
+          machine’s performance. This post details some background information
+          on the experience of porting Firefox to run natively on these CPUs.
+        </p>
+        <p>
+          We’ll start with some background on the Mac transition and give an
+          overview of Firefox internals that needed to know about the new
+          architecture, before moving on to the concept of Universal Binaries.
+        </p>
+        <p>
+          We’ll then explain how DRM/EME works on the new platform, talk about
+          our experience with macOS Big Sur, and discuss various updater
+          problems we had to deal with. We’ll conclude with the release and an
+          overview of various other improvements that are in the pipeline.
+        </p>
+      </div>
+    </section>
+
+    <section id="top3" class="grid-one main-bg section">
+      <div class="main-content grid-one-content">
+        <h2 class="grid-main-heading">Top 3</h2>
+        <p class="grid-description">
+          Odeo koofers mobly, plickers. Appjet fleck kaboodle knewton, edmodo
+          revver. Spock skype jaiku eskobo convore, babblely prezi blippy rovio
+          joost, oooj weebly klout. Geni joyent chumby orkut chartly, blippy
+          ebay. Boxbe dogster zoodles glogster, cotweet. Octopart greplin
+          kaboodle xobni lijit, yuntaa wikia plickers wufoo, hipmunk foodzie
+          spock. Spotify wufoo mzinga boxbe, skype chartly.
+        </p>
+        <div class="grid">
+          <article>
+            <h3>Teste 1</h3>
+            <p>
+              Leverage agile frameworks to provide a robust synopsis for high
+              level overviews. Iterative approaches to corporate strategy foster
+              collaborative thinking to further the overall value proposition.
+              Organically grow the holistic world view of disruptive innovation
+              via workplace diversity and empowerment.
+            </p>
+          </article>
+          <article>
+            <h3>Teste 2</h3>
+            <p>
+              Bring to the table win-win survival strategies to ensure proactive
+              domination. At the end of the day, going forward, a new normal
+              that has evolved from generation X is on the runway heading
+              towards a streamlined cloud solution. User generated content in
+              real-time will have multiple touchpoints for offshoring.
+            </p>
+          </article>
+          <article>
+            <h3>Teste 3</h3>
+            <p>
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity to beta test. Override the digital divide with additional
+              clickthroughs from DevOps. Nanotechnology immersion along the
+              information highway will close the loop on focusing solely on the
+              bottom line.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="grid-one white-bg section">
+      <div class="main-content grid-one-content">
+        <h2 class="grid-main-heading">Gallery</h2>
+        <p class="grid-description">
+          Disqus twitter lala ngmoco joyent twitter, zinch diigo lanyrd. Twitter
+          dopplr klout movity dopplr heroku hulu orkut jiglu, elgg disqus qeyno
+          joukuu zlio grockit. Heekya xobni kaboodle tumblr omgpop, qeyno klout
+          bitly zillow meevee, gooru zooomr chartly. Divvyshot flickr babblely
+          scribd chumby zanga orkut, joost reddit greplin kosmix loopt.
+        </p>
+        <div class="grid">
+          <div class="gallery-img">
+            <img
+              src="http://source.unsplash.com/random/360x360?r=1"
+              alt="random image from unsplash"
+            />
+          </div>
+          <div class="gallery-img">
+            <img
+              src="http://source.unsplash.com/random/360x360?h=3"
+              alt="random image from unsplash"
+            />
+          </div>
+          <div class="gallery-img">
+            <img
+              src="http://source.unsplash.com/random/360x360?a=3"
+              alt="random image from unsplash"
+            />
+          </div>
+          <div class="gallery-img">
+            <img
+              src="http://source.unsplash.com/random/360x360?g=1"
+              alt="random image from unsplash"
+            />
+          </div>
+          <div class="gallery-img">
+            <img
+              src="http://source.unsplash.com/random/360x360?k=3"
+              alt="random image from unsplash"
+            />
+          </div>
+          <div class="gallery-img">
+            <img
+              src="http://source.unsplash.com/random/360x360?d=3"
+              alt="random image from unsplash"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="white-bg section">
+      <div class="main-content top3-content">
+        <h2>Pricing</h2>
+        <p>
+          Webtwo ipsum oooooc heekya. Odeo reddit zlio, lijit. Koofers trulia
+          handango etsy jumo, blippy flickr heroku tivo zimbra, plugg zinch
+          plugg. Octopart hulu zillow dogster stypi wikia gsnap, wakoopa jibjab
+          oovoo tumblr greplin.
+        </p>
+        <p>
+          Skype wufoo heekya cuil plaxo, skype lijit imeem. Zoodles dogster
+          blyve whrrl groupon, fleck imvu insala. wufoo stypi nuvvo. Bubbli oooj
+          imvu empressr twones joyent, blippy oooooc sococo bebo zappos kippt,
+          napster koofers handango spock. Doostang kazaa omgpop scribd, etsy
+          foodzie spotify joost, tumblr dopplr. Dropio tivo cloudera zinch
+          greplin omgpop, wakoopa chartly kiko omgpop.
+        </p>
+        <div class="responsive-table">
+          <table>
+            <caption>
+              Pricing table
+            </caption>
+            <thead>
+              <tr>
+                <th>Title 1</th>
+                <th>Title 2</th>
+                <th>Title 3</th>
+                <th>Title 4</th>
+                <th>Title 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Content 1</td>
+                <td>Content 2</td>
+                <td>Content 3</td>
+                <td>Content 4</td>
+                <td>Content 5</td>
+              </tr>
+              <tr>
+                <td>Content 1</td>
+                <td>Content 2</td>
+                <td>Content 3</td>
+                <td>Content 4</td>
+                <td>Content 5</td>
+              </tr>
+              <tr>
+                <td>Content 1</td>
+                <td>Content 2</td>
+                <td>Content 3</td>
+                <td>Content 4</td>
+                <td>Content 5</td>
+              </tr>
+              <tr>
+                <td>Content 1</td>
+                <td>Content 2</td>
+                <td>Content 3</td>
+                <td>Content 4</td>
+                <td>Content 5</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5">Testando</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="intro main-bg section">
+      <div class="main-content intro-content">
+        <div class="intro-text-content">
+          <h2>Contact US</h2>
+          <p>
+            Movity ning fleck blippy blyve voki chegg, balihoo plaxo imvu
+            foodzie xobni. Movity gooru glogster whrrl stypi oovoo, zappos fleck
+            mozy omgpop. Heekya zoho dropio eduvant sifteo, lijit revver.
+            Babblely ifttt whrrl heroku eduvant tumblr babblely balihoo, shopify
+            heekya mozy kosmix divvyshot greplin. Eduvant bebo elgg knewton
+            zooomr octopart, movity etsy airbnb. Flickr revver wesabe joost,
+            wesabe.
+          </p>
+        </div>
+        <div class="intro-img">
+          <img
+            src="assets/img/contact-us.svg"
+            alt="Um homem segurando a logo do CSS, uma mulher empurrando a logo do JavaScript e um homem segurando a logo do HTML."
+          />
+        </div>
+        <div class="contact-form">
+          <fieldset class="form-grid">
+            <legend>Contact Form</legend>
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                placeholder="Your first name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                placeholder="Your last name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your e-mail"
+              />
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+            <div class="form-group full-width">
+              <button type="submit">Send Message</button>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+    <a href="#" class="back-to-top">➤</a>
   </body>
 </html>
